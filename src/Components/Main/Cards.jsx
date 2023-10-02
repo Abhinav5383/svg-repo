@@ -190,7 +190,7 @@ const Cards = ({ page, setPage, pageSize, maxPages, setMaxPages, query, createTo
       insertIcon(root, icon);
     }
 
-    // Split the query by space 
+    // Split the query
     const queryTerms = query.replaceAll(" ", "-").replaceAll("_", "-").split("-");
 
     // Search for icons matching the first query term

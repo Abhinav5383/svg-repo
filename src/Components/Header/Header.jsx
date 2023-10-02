@@ -13,7 +13,7 @@ const Header = ({ setQuery }) => {
     }
 
     timeoutId = setTimeout(() => {
-      setQuery(e.target.value.replace(/\s/g, ''));
+      setQuery(e.target.value);
     }, 800);
   }
 
