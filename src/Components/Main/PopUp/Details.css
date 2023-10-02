@@ -1,0 +1,401 @@
+.details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: brightness(70%) blur(1px);
+
+  z-index: 15;
+}
+
+.details .wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.details .wrapper .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 16;
+}
+
+.details .wrapper .content {
+  transform: translate(0, 2rem);
+  width: 600px;
+  height: max-content;
+  background-color: #313539;
+  padding: 1rem;
+  padding-top: 0.6rem;
+  border-radius: 0.3rem;
+  z-index: 20;
+  position: relative;
+}
+
+.details .top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid white;
+}
+
+.details .top .details-title {
+  font-size: 1.2rem;
+  padding: 0 0.5rem;
+  text-transform: capitalize;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.details .closebtn {
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-content: inherit;
+  justify-content: center;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+}
+
+.details .closebtn:hover {
+  background-color: var(--background-color);
+}
+
+.details .closebtn svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.details .content-main {
+  margin-top: 2rem;
+  width: 100%;
+  display: grid;
+  position: relative;
+  grid-template-columns: 2fr 3fr;
+  gap: 1rem;
+}
+
+.details .content-main .icon-details {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.details .content-main .icon-details .icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  border-radius: 0.3rem;
+  filter: contrast(105%);
+}
+
+.details .content-main .icon-details .scheme-toggle {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 25;
+  transform: translate(50%, -50%);
+  background-color: #FFFFFF;
+  filter: contrast(105%);
+}
+
+.details .content-main .icon-details .currColor{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 0.9rem;
+  /* background-color: var(--background-color); */
+  background-color: var(--card-color);
+  /* filter: contrast(120%); */
+  color: #FFFFFFAA;
+  padding: 0.2rem 0.6rem;
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.details .content-main .icon-details .currColor:hover{
+  color: #FFFFFF;
+}
+
+.details .content-main .icon-details .icon>svg {
+  width: var(--svg-width);
+  height: var(--svg-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details .content-main .icon-details .reset_button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  background-color: var(--background-color);
+  border-radius: 50%;
+  filter: contrast(105%);
+}
+
+.details .content-main .icon-details .reset_button svg {
+  color: var(--svg-fill);
+  fill: var(--svg-fill);
+}
+
+.details .content-main .sidebar {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
+.details .content-main .sidebar .color-options {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.details .content-main .sidebar .color-options .color-option {
+  height: 1.4rem;
+  width: 1.4rem;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 50%;
+}
+
+.details .adjustments {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.details .adjustments .dimensions {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 4fr 1fr 4fr;
+  /* place-items: center; */
+}
+
+.details .adjustments .dimensions .width {
+  margin-right: 0.3rem;
+}
+
+.details .adjustments .dimensions .height {
+  margin-left: 0.3rem;
+}
+
+.details .adjustments .dimensions .width,
+.details .adjustments .dimensions .height {
+  overflow: hidden;
+}
+
+.details .adjustments .dimensions .link-icon {
+  position: relative;
+}
+
+.details .adjustments .dimensions .link-icon .pseduo-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  height: 50%;
+  aspect-ratio: auto;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.2rem;
+}
+
+.details .adjustments .dimensions .link-icon .pseduo-wrapper svg {
+  scale: 0.7;
+  opacity: 0.3;
+}
+
+.details .adjustments .dimensions .link-icon .pseduo-wrapper.linked svg {
+  opacity: 0.8;
+  scale: 0.9;
+}
+
+.details .adjustments .dimensions .link-icon .pseduo-wrapper:hover {
+  background-color: var(--background-color);
+}
+
+.details .adjustments .dimensions .width,
+.details .adjustments .dimensions .height {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.details .adjustments .dimensions .width .text,
+.details .adjustments .dimensions .height .text {
+  padding: 0.3rem 0.5rem;
+  width: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 0.8rem;
+}
+
+.details .adjustments .dimensions .width .input,
+.details .adjustments .dimensions .height .input {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  position: relative;
+}
+
+.details .adjustments .dimensions .width .input input,
+.details .adjustments .dimensions .height .input input {
+  width: calc(95% - 2rem);
+  padding: 0.4rem 0.9rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 0.9rem;
+  border: none;
+  outline: none;
+  background-color: var(--background-color);
+  border-radius: 0.3rem;
+}
+
+.details .adjustments .dimensions .input input::placeholder {
+  color: #FFFFFFAA;
+}
+
+.details .adjustments .dimensions .width .input .unit,
+.details .adjustments .dimensions .height .input .unit {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-100%, -50%);
+  cursor: text;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  display: none;
+}
+
+.details .bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.details .bottom .buttons {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 1rem;
+}
+
+.details .bottom .buttons .btn {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  padding: 0.5rem 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 0.2rem;
+}
+
+.details .bottom .buttons .btn:hover {
+  filter: contrast(110%);
+}
+
+.details .bottom .buttons .btn .text,
+.details .bottom .buttons .btn svg {
+  height: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details .bottom .buttons .btn .text {
+  margin: 0 0.3rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.details .bottom .buttons .btn svg {
+  aspect-ratio: 1 / 1;
+  margin: 0 0.3rem;
+}
+
+
+
+
+
+@media screen and (max-width: 780px) {
+  .details .wrapper .content {
+    width: 500px;
+  }
+}
+
+
+@media screen and (max-width: 660px) {
+  .details .wrapper .content {
+    width: 320px;
+  }
+
+  .details .top .details-title {
+    font-size: 1rem;
+  }
+
+  .details .content-main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .details .content-main .icon-details {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+}

@@ -1,0 +1,51 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  color-scheme: dark;
+  background-color: #212529;
+
+
+  --edge-margin: 4rem;
+  --secondary-color: #dee2e6bf;
+  --hover-color: #6ea8fe;
+  --svg-color: #FFFFFF;
+  --accent-color: #712cf9;
+  --transparent-white: #DEF2;
+  --opaque-white: #DDEEFF30;
+  --card-color: #343a40;
+  --card-color-opacity: 1;
+  --background-color: #212529;
+
+  --success-color: #198754;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #212529;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.15rem;
+  background-color: slateblue;
+}
+
+
+@media screen and (max-width: 767px) {
+
+  html,
+  body {
+    --edge-margin: 2rem;
+  }
+}
+
+
+@media screen and (max-width: 560px) {
+
+  html,
+  body {
+    --edge-margin: 0.7rem;
+  }
+}
