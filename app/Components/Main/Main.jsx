@@ -5,9 +5,10 @@ import BackwardIcon from '../../assets/BackwardIcon';
 import ForwardIcon from '../../assets/ForwardIcon';
 import { Check } from '../../assets/Check';
 import Details from './PopUp/Details';
+import Loading from "../../assets/Loading";
 
 
-const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, query, setQuery, data, popupIds, currPopup, setcurrPopup }) => {
+const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, query, setQuery, popupIds, currPopup, setcurrPopup, isLoading, setIsLoading }) => {
 
   let timeoutId;
 
@@ -60,6 +61,7 @@ const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, que
   const pageBackward = (count = 1) => {
     if (page - count < 1) {
       // Do nothing
+      setPage(1);
     }
     else if (page - count >= 1) {
       setPage(page - count);
@@ -83,7 +85,7 @@ const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, que
 
 
   return (
-    <main tabIndex={1} onKeyDown={handleKeyDown}>
+    <main tabIndex={1} onKeyDown={handleKeyDown} className={`${isLoading ? "loading" : ""}`}>
       <div className="main-content" >
 
         <div className="cards-wrapper">
@@ -100,14 +102,15 @@ const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, que
             createToast={createToast}
             notificationTypes={notificationTypes}
 
-            data={data}
-
             popupIds={popupIds}
             currPopup={currPopup}
             setcurrPopup={setcurrPopup}
 
             selectedIcon={selectedIcon}
             setSelectedIcon={setSelectedIcon}
+
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
           />
         </div>
 
@@ -130,10 +133,10 @@ const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, que
               </div>
 
               <div className="buttons">
-                <div className={`next btn ${page === Math.ceil(maxPages) ? "disabled" : ""}`} onClick={() => { pageForward(1) }}>
+                <div className={`next btn ${page == maxPages ? "disabled" : ""}`} onClick={() => { pageForward(1) }}>
                   < ForwardIcon />
                 </div>
-                <div className={`end btn dbl-btn ${page === Math.ceil(maxPages) ? "disabled" : ""}`} onClick={() => { pageForward(Math.ceil(maxPages) - page) }}>
+                <div className={`end btn dbl-btn ${page == maxPages ? "disabled" : ""}`} onClick={() => { pageForward(Math.ceil(maxPages) - page) }}>
                   < ForwardIcon />
                   < ForwardIcon />
                 </div>
@@ -171,6 +174,12 @@ const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, que
           }
         </div>
       </div>
+
+
+      {
+        isLoading &&
+        < Loading />
+      }
 
     </main>
   )

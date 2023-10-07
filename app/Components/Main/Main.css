@@ -4,6 +4,8 @@ main {
   min-height: 145vh;
   display: grid;
   grid-template-columns: 1fr;
+  position: relative;
+  overflow: hidden;
 }
 
 main:focus {
@@ -127,6 +129,7 @@ main .cards-wrapper {
   padding: 0;
   width: 100%;
   grid-template-columns: 1fr;
+  min-height: 70vh;
 }
 
 main .pagination {

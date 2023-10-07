@@ -102,10 +102,12 @@ nav .wrapper .search-box .search-icon {
   justify-content: center;
   padding: var(--navitem-padding);
   cursor: pointer;
+  background-color: #DEF1;
 }
 
-nav .wrapper .search-box .search-icon:hover {
-  background-color: #DEF1;
+nav .wrapper .search-box .search-icon:hover,
+nav .wrapper .search-box .search-icon:focus-visible {
+  background-color: #DEF2;
 }
 
 nav .wrapper .search-box .search-icon svg {
