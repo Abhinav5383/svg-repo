@@ -163,7 +163,13 @@ const Details = ({
               ></div>
 
               <div className="currColor" onClick={copy_current_color}>
-                {svg_color}
+                <div className="wrapper">
+                  <div className="color-name">{svg_color}</div>
+
+                  <div className="tooltip">
+                    <div className="text">Copy&nbsp;color</div>
+                  </div>
+                </div>
               </div>
 
               {
