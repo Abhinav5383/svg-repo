@@ -1,4 +1,4 @@
-import data from "../../app/data";
+import data from "../../utils/data";
 import { filterAndSortIcons } from "@/utils/functions";
 
 
