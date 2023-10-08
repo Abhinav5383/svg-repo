@@ -17,22 +17,22 @@ const Details = ({
   createToast
 }) => {
 
-  // const colorOptions = ["#FFFFFF", "#212529", "#2378DC", "#712cf9", "#FF4655", "#19A754", "#00a0a8", "#ae00de", "#ffb700"];
+
   const colorOptions = [
     "#FFFFFF",
     "#212529",
-    "#FF5733",    // Coral (Popular)
-    "#FFD700",    // Gold (Popular)
-    "#FF1493",    // Deep Pink (Popular)
-    "#0077B5",    // LinkedIn Blue (Popular)
-    "#FF9900",    // Amazon Orange (Popular)
-    "#E50914",    // Netflix Red (Popular)
-    "#0090EB",    // Uber Light Blue (Popular)
-    "#FF3E00",    // YouTube Red (Popular)
-    "#34A853",    // Google Maps Green (Popular)
-    "#800080",    // Purple (Popular)
-    "#FF00FF",    // Magenta (Popular)
-    "#00FFFF",    // Cyan (Popular)
+    "#FF5733",
+    "#FFD700",
+    "#FF1493",
+    "#0077B5",
+    "#FF9900",
+    "#E50914",
+    "#0090EB",
+    "#FF3E00",
+    "#34A853",
+    "#800080",
+    "#FF00FF",
+    "#00FFFF",
   ];
 
   const [svg_color, setSvg_color] = useState("#FFFFFF");
@@ -92,6 +92,12 @@ const Details = ({
       height: 45
     })
   }
+
+  const copy_current_color = () => {
+    navigator.clipboard.writeText(svg_color);
+    createToast("Color copied to clipboard", notificationTypes.success);
+  }
+
 
   useEffect(() => {
     if (svg_color !== "#FFFFFF" || details_panel_theme !== "#212529" || dimensions.width !== 45 || dimensions.height !== 45) {
@@ -156,7 +162,7 @@ const Details = ({
                 }}
               ></div>
 
-              <div className="currColor">
+              <div className="currColor" onClick={copy_current_color}>
                 {svg_color}
               </div>
 
