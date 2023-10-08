@@ -47,16 +47,14 @@
 .cards .wrapper .card .card-icon svg {
   width: 40%;
   height: 40%;
+  /* width: 1.8rem;
+  height: 1.8rem; */
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--svg-color);
 }
 
-.cards .wrapper .card .card-icon{
-  color: var(--svg-color);
-  font-size: 1.4rem;
-}
 
 .type-color {
   color: var(--svg-color);
