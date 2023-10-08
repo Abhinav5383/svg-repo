@@ -3,7 +3,7 @@ import "./Header.css";
 import SearchIcon from '../../assets/SearchIcon';
 
 
-const Header = ({ query, setQuery, isLoading, prevQuery }) => {
+const Header = ({ query, setQuery, isLoading  }) => {
   const [queryVal, setQueryVal] = useState("");
   let timeoutID;
 
@@ -14,7 +14,7 @@ const Header = ({ query, setQuery, isLoading, prevQuery }) => {
     if (timeoutID) clearTimeout(timeoutID);
 
     if (e.key === "Enter") {
-      if (query === prevQuery && prevQuery !== "") { return; }
+      if (queryVal === query) { return; }
       setQuery(queryVal);
     }
 

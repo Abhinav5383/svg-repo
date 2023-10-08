@@ -8,7 +8,7 @@ import Details from './PopUp/Details';
 import Loading from "../../assets/Loading";
 
 
-const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, query, setQuery, popupIds, currPopup, setcurrPopup, isLoading, setIsLoading, setPrevQuery }) => {
+const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, query, setQuery, popupIds, currPopup, setcurrPopup, isLoading, setIsLoading }) => {
 
   let timeoutId;
 
@@ -111,7 +111,6 @@ const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, que
 
             isLoading={isLoading}
             setIsLoading={setIsLoading}
-            setPrevQuery={setPrevQuery}
           />
         </div>
 

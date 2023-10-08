@@ -26,7 +26,7 @@ const Card = ({ iconName, data, createToast, notificationTypes, popupIds, currPo
 
 
 
-const Cards = ({ page, setPage, pageSize, maxPages, setMaxPages, query, createToast, notificationTypes, popupIds, currPopup, setcurrPopup, selectedIcon, setSelectedIcon, isLoading, setIsLoading, setPrevQuery }) => {
+const Cards = ({ page, setPage, pageSize, maxPages, setMaxPages, query, createToast, notificationTypes, popupIds, currPopup, setcurrPopup, selectedIcon, setSelectedIcon, isLoading, setIsLoading }) => {
 
   const [renderIconsList, setRenderIconsList] = useState();
   const [iconsLen, setIconsLen] = useState(0);
@@ -64,7 +64,6 @@ const Cards = ({ page, setPage, pageSize, maxPages, setMaxPages, query, createTo
         console.log(error);
         setIsLoading(false);
       }
-      setPrevQuery(query);
 
     })()
 

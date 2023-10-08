@@ -13,7 +13,6 @@ function App() {
   const [pageSize, setPageSize] = useState(400);
   const [maxPages, setMaxPages] = useState(1);
   const [query, setQuery] = useState("");
-  const [prevQuery, setPrevQuery] = useState("");
   const [currPopup, setcurrPopup] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -30,7 +29,6 @@ function App() {
         query={query}
         setQuery={setQuery}
         isLoading={isLoading}
-        prevQuery={prevQuery}
       />
 
       < Main
@@ -47,7 +45,6 @@ function App() {
         setcurrPopup={setcurrPopup}
         isLoading={isLoading}
         setIsLoading={setIsLoading}
-        setPrevQuery={setPrevQuery}
       />
     </div>
   )
