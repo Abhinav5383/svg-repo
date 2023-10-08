@@ -29,6 +29,7 @@ function App() {
         query={query}
         setQuery={setQuery}
         isLoading={isLoading}
+        setPage={setPage}
       />
 
       < Main

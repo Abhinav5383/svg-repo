@@ -3,7 +3,7 @@ import "./Header.css";
 import SearchIcon from '../../assets/SearchIcon';
 
 
-const Header = ({ query, setQuery, isLoading  }) => {
+const Header = ({ query, setQuery, isLoading, setPage }) => {
   const [queryVal, setQueryVal] = useState("");
   let timeoutID;
 
@@ -16,12 +16,14 @@ const Header = ({ query, setQuery, isLoading  }) => {
     if (e.key === "Enter") {
       if (queryVal === query) { return; }
       setQuery(queryVal);
+      setPage(1);
     }
 
     setTimeout(() => {
       if (e.target.value === "" || !e.target.value) {
         setQueryVal("");
         setQuery("");
+        setPage(1);
       }
     }, 500);
   }
@@ -38,7 +40,7 @@ const Header = ({ query, setQuery, isLoading  }) => {
           </div>
 
           <div className="search-box">
-            <div className="search-icon" onClick={() => { if (isLoading) return; setQuery(queryVal) }}>
+            <div className="search-icon" onClick={() => { if (isLoading) return; setQuery(queryVal); setPage(1) }}>
               < SearchIcon />
             </div>
 
