@@ -26,18 +26,17 @@ const Card = ({ iconName, data, createToast, notificationTypes, popupIds, currPo
 
 
 
-const Cards = ({ page, setPage, pageSize, maxPages, setMaxPages, query, createToast, notificationTypes, popupIds, currPopup, setcurrPopup, selectedIcon, setSelectedIcon, isLoading, setIsLoading }) => {
+const Cards = ({ page, setPage, pageSize, maxPages, setMaxPages, query, createToast, notificationTypes, popupIds, currPopup, setcurrPopup, selectedIcon, setSelectedIcon, isLoading, setIsLoading, setPrevQuery }) => {
 
   const [renderIconsList, setRenderIconsList] = useState();
   const [iconsLen, setIconsLen] = useState(0);
-  const [prevQuery, setPrevQuery] = useState("");
 
 
   useEffect(() => {
 
     (async () => {
 
-      if (query === prevQuery && prevQuery !== "" || isLoading) return;
+      if (isLoading) return;
       await setIsLoading(true);
 
       try {

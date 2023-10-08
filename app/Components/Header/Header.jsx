@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import "./Header.css";
 import SearchIcon from '../../assets/SearchIcon';
 
 
-const Header = ({ setQuery, isLoading, setIsLoading }) => {
+const Header = ({ query, setQuery, isLoading, prevQuery }) => {
   const [queryVal, setQueryVal] = useState("");
   let timeoutID;
 
@@ -14,6 +14,7 @@ const Header = ({ setQuery, isLoading, setIsLoading }) => {
     if (timeoutID) clearTimeout(timeoutID);
 
     if (e.key === "Enter") {
+      if (query === prevQuery && prevQuery !== "") { return; }
       setQuery(queryVal);
     }
 
