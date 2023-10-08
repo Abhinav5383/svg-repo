@@ -38,6 +38,7 @@ const Cards = ({ page, setPage, pageSize, maxPages, setMaxPages, query, createTo
 
       if (isLoading) return;
       await setIsLoading(true);
+      await setPage(1);
 
       try {
 
