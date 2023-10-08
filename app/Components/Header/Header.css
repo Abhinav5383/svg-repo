@@ -1,0 +1,228 @@
+header,
+nav {
+  --navitem-height: 1.8rem;
+  --brand-font-size: 1.5rem;
+  --input-font-size: 1rem;
+  --navitem-padding: 0.3rem;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  background: linear-gradient(90deg, #712cf9EE, #712cf9FF);
+  backdrop-filter: blur(2px);
+  z-index: 9;
+}
+
+nav {
+  padding: 0.6rem 0;
+  margin: 0 var(--edge-margin);
+}
+
+nav .wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .wrapper .links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav .wrapper .brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--navitem-height);
+  padding: var(--navitem-padding) 0;
+  font-size: var(--brand-font-size);
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  user-select: none;
+}
+
+nav .wrapper .category-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+
+nav .wrapper .category-links .category-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: var(--navitem-height);
+  padding: var(--navitem-padding) 0.6rem;
+  border-radius: 0.3rem;
+  min-width: 2rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+nav .wrapper .category-links .category-link:hover {
+  background-color: #DEF1;
+}
+
+nav .wrapper .category-links .category-link.active {
+  background-color: #DEF2;
+  font-weight: 500;
+}
+
+nav .wrapper .category-links .category-link.active:hover {
+  background-color: #DEF3;
+}
+
+
+nav .wrapper .search-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  border-radius: 0.3rem;
+  overflow: hidden;
+  background-color: var(--transparent-white);
+}
+
+nav .wrapper .search-box .search-icon {
+  height: var(--navitem-height);
+  width: var(--navitem-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--navitem-padding);
+  cursor: pointer;
+  background-color: #DEF1;
+}
+
+nav .wrapper .search-box .search-icon:hover,
+nav .wrapper .search-box .search-icon:focus-visible {
+  background-color: #DEF2;
+}
+
+nav .wrapper .search-box .search-icon svg {
+  width: 50%;
+  height: 50%;
+}
+
+nav .wrapper .search-box #icons-search {
+  background-color: transparent;
+  color: #EFF;
+  padding: 0;
+  height: var(--navitem-height);
+  outline: none;
+  border: none;
+  padding: var(--navitem-padding);
+  width: 20rem;
+  font-size:
+    var(--input-font-size);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav .wrapper .search-box #icons-search::placeholder {
+  color: #EFF6;
+}
+
+nav .wrapper:has(#icons-search:focus) .search-box {
+  background-color: var(--opaque-white);
+}
+
+
+
+
+@media screen and (min-width: 1921px) {
+
+  nav .wrapper .search-box #icons-search {
+    width: 35rem;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+
+  nav .wrapper .search-box #icons-search {
+    width: 25rem;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+
+  nav .wrapper {
+    width: 100%;
+    margin-right: 1.5rem;
+  }
+
+  nav .wrapper .search-box #icons-search {
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 1023px) {
+  nav .wrapper .brand {
+    display: none;
+  }
+
+  nav .wrapper {
+    width: 100%;
+    margin-right: 1.5rem;
+  }
+
+  nav .wrapper .search-box {
+    width: 40%;
+  }
+
+  nav .wrapper .search-box #icons-search {
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+
+  nav {
+    padding: 0.4rem 0;
+    --navitem-height: 1.6rem;
+  }
+
+  nav .wrapper {
+    flex-direction: column;
+  }
+
+  nav .wrapper .links {
+    width: 100%;
+  }
+
+  nav .wrapper .links .category-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+  }
+
+  nav .wrapper .category-links .category-link {
+    width: auto;
+    min-width: auto;
+  }
+
+  nav .wrapper .brand {
+    display: none;
+  }
+
+  nav .wrapper .search-box {
+    margin-top: 0.4rem;
+    width: 100%;
+  }
+
+  nav .wrapper .search-box #icons-search {
+    width: 100%;
+  }
+}
