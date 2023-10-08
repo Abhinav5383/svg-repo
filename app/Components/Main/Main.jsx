@@ -85,7 +85,7 @@ const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, que
 
 
   return (
-    <main tabIndex={1} onKeyDown={handleKeyDown} className={`${isLoading ? "loading" : ""}`}>
+    <main tabIndex={0} onKeyDown={handleKeyDown} className={`${isLoading ? "loading" : ""}`}>
       <div className="main-content" >
 
         <div className="cards-wrapper">
