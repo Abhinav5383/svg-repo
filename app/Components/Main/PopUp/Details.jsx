@@ -48,9 +48,9 @@ const Details = ({
   const copy_data = () => {
     try {
       navigator.clipboard.writeText(selectedIcon.data);
-      createToast("Copied to clipboard", notificationTypes.success);
+      createToast("SVG copied to clipboard", notificationTypes.success);
     } catch (error) {
-      createToast("Unable to copy", notificationTypes.success);
+      createToast("Unable to copy svg data", notificationTypes.success);
     }
   }
 
@@ -118,6 +118,9 @@ const Details = ({
       else {
         setSvg_color(colorOptions[0]);
       }
+
+      console.log("details_panel_theme : \t", details_panel_theme);
+      console.log("svg_color : \t", svg_color);
     }
   }, [details_panel_theme])
 
@@ -138,16 +141,15 @@ const Details = ({
           </div>
 
           <div className="content-main">
-            <div className="icon-details">
+            <div className="icon-details"
+              style={{
+                "--svg-color": svg_color,
+                "--background-color": details_panel_theme,
+                "--svg-height": `${dimensions.height || 5}`,
+                "--svg-width": `${dimensions.width || 5}`
+              }}>
               <div className="icon"
-                dangerouslySetInnerHTML={{ __html: selectedIcon.data }}
-                style={{
-                  "--svg-color": svg_color,
-                  "--background-color": details_panel_theme,
-                  "--svg-height": `${dimensions.height || 1}%`,
-                  "--svg-width": `${dimensions.width || 1}%`
-                }}
-              >
+                dangerouslySetInnerHTML={{ __html: selectedIcon.data }}>
 
               </div>
 
@@ -162,13 +164,9 @@ const Details = ({
                 }}
               ></div>
 
-              <div className="currColor" onClick={copy_current_color}>
+              <div className="currColor" onClick={copy_current_color} title="Copy color">
                 <div className="wrapper">
                   <div className="color-name">{svg_color}</div>
-
-                  <div className="tooltip">
-                    <div className="text">Copy&nbsp;color</div>
-                  </div>
                 </div>
               </div>
 
@@ -298,12 +296,12 @@ const Details = ({
           <div className="bottom">
             <div className="buttons">
 
-              <div className="btn copy-btn" onClick={copy_data}>
+              <div className="btn copy-btn" onClick={copy_data} title="Copy svg to clipboard">
                 <div className="text">Copy</div>
                 <CopyIcon />
               </div>
 
-              <div className="btn download-btn" onClick={download_icon}>
+              <div className="btn download-btn" onClick={download_icon} title="Download icon">
                 <div className="text">Download</div>
                 < DownloadIcon />
               </div>
