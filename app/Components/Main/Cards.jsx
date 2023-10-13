@@ -16,7 +16,7 @@ const Card = ({ iconName, data, createToast, notificationTypes, popupIds, currPo
 
 
   return (
-    <div className={`card`} onClick={() => { handleClick(data) }}>
+    <div className={`card`} onClick={() => { handleClick(data) }} title={iconName?.replaceAll("-", " ")}>
       <div className="card-icon" dangerouslySetInnerHTML={{ __html: data }}></div>
 
       <div className="card-name">{iconName?.replaceAll("-", " ")}</div>
