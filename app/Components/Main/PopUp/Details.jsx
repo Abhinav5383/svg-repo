@@ -201,7 +201,7 @@ const Details = ({
                         style={{
                           backgroundColor: option,
                           outline: svg_color === option ? `2px solid ${option}` : "",
-                          outlineOffset: "3px",
+                          outlineOffset: "2px",
                           display: option === details_panel_theme ? "none" : "inline-block"
                         }}
                       >

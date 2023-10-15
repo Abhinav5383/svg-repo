@@ -120,7 +120,10 @@ main .notification-wrapper .toast .title {
 
 
 
+
 main .main-content {
+  display: grid;
+  grid-template-columns: 1fr;
   margin: 0 var(--edge-margin);
 }
 
@@ -131,6 +134,7 @@ main .cards-wrapper {
   grid-template-columns: 1fr;
   min-height: 70vh;
 }
+
 
 main .pagination {
   display: flex;
@@ -205,4 +209,49 @@ main .pageination-buttons .dbl-btn svg:nth-child(2) {
 main .pageination-buttons .buttons .btn.disabled {
   filter: brightness(50%);
   pointer-events: none;
+}
+
+
+@media screen and (max-width: 500px) {
+
+  main .pageination-buttons .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.3em;
+  }
+
+  main .pageination-buttons .buttons .btn {
+    margin: 0 0.2rem;
+    padding: 0.3rem 0.4rem;
+    min-width: 1.3rem;
+  }
+
+
+  main .notification-wrapper .toast {
+    margin: 0.3rem 0;
+    padding: 0.2rem 0.5rem;
+    max-width: 16rem;
+  }
+
+  main .notification-wrapper .toast .icon {
+    margin: 0 0.2rem;
+    height: 1.4rem !important;
+    width: 1.4rem !important;
+  }
+
+  main .notification-wrapper .toast .title {
+    height: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 0.85rem;
+    margin: 0 0.2rem;
+    padding: 0;
+  }
+
+
+
+
 }

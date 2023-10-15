@@ -118,7 +118,7 @@ const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, que
           <div className="pagination">
             <div className="pageination-buttons">
 
-              <div className="buttons">
+              <div className="buttons two">
                 <div className={`start btn dbl-btn ${page === 1 ? "disabled" : ""}`} onClick={() => { pageBackward(page - 1) }}>
                   < BackwardIcon />
                   < BackwardIcon />
@@ -132,7 +132,7 @@ const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, que
                 <div className="page btn">{page}</div>
               </div>
 
-              <div className="buttons">
+              <div className="buttons two">
                 <div className={`next btn ${page == maxPages ? "disabled" : ""}`} onClick={() => { pageForward(1) }}>
                   < ForwardIcon />
                 </div>
@@ -167,11 +167,17 @@ const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, que
             toastList &&
             toastList.map((toast, i) => (
               <div className={`toast ${toast.type}`} key={`${toast.title}-${i}`}>
-                <div className="icon">{icons.success}</div>
+                <div className="icon">{icons[toast.type]}</div>
                 <div className="title">{toast.title}</div>
               </div>
             ))
           }
+
+          {/* <div className={`toast success`}>
+            <div className="icon">{icons.success}</div>
+            <div className="title">This a demo toast</div>
+          </div> */}
+
         </div>
       </div>
 

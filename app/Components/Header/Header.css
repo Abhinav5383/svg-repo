@@ -168,9 +168,6 @@ nav .wrapper:has(#icons-search:focus) .search-box {
 
 
 @media screen and (max-width: 1023px) {
-  nav .wrapper .brand {
-    display: none;
-  }
 
   nav .wrapper {
     width: 100%;
@@ -196,21 +193,6 @@ nav .wrapper:has(#icons-search:focus) .search-box {
 
   nav .wrapper {
     flex-direction: column;
-  }
-
-  nav .wrapper .links {
-    width: 100%;
-  }
-
-  nav .wrapper .links .category-links {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    width: 100%;
-  }
-
-  nav .wrapper .category-links .category-link {
-    width: auto;
-    min-width: auto;
   }
 
   nav .wrapper .brand {

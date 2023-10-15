@@ -40,15 +40,12 @@
   margin-bottom: 0.5rem;
   border-radius: 0.3rem;
   overflow: hidden;
-  /* width: 8rem; */
   aspect-ratio: 3 / 2;
 }
 
 .cards .wrapper .card .card-icon svg {
   width: 40%;
   height: 40%;
-  /* width: 1.8rem;
-  height: 1.8rem; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,40 +151,46 @@
 
 @media screen and (max-width: 1380px) {
   .cards {
-    --grid-cols: 6;
+    --grid-cols: 8;
   }
 }
 
 
 @media screen and (max-width: 1023px) {
   .cards {
-    --grid-cols: 5;
+    --grid-cols: 6;
   }
 }
 
 @media screen and (max-width: 767px) {
   .cards {
-    --grid-cols: 4;
+    --grid-cols: 5;
   }
 }
 
-@media screen and (max-width: 620px) {
-  .cards {
-    --grid-cols: 4;
-  }
 
-  main .main-content {
-    margin: 0 0.3rem !important;
+@media screen and (max-width: 600px) {
+  .cards {
+    --grid-cols: 5;
   }
 
   .cards .wrapper {
-    width: 96%;
-    gap: 1.2rem 0.4rem;
+    gap: 1rem 0.8rem;
   }
 }
 
-@media screen and (max-width: 320px) {
+
+@media screen and (max-width: 500px) {
+  .cards {
+    --grid-cols: 4;
+  }
+
+}
+
+
+@media screen and (max-width: 331px) {
   .cards {
     --grid-cols: 3;
   }
+
 }
