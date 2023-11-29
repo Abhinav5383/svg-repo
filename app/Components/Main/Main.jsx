@@ -173,10 +173,10 @@ const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, que
             ))
           }
 
-          {/* <div className={`toast success`}>
+          <div className={`toast success`}>
             <div className="icon">{icons.success}</div>
             <div className="title">This a demo toast</div>
-          </div> */}
+          </div>
 
         </div>
       </div>
