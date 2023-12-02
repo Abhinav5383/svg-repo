@@ -78,11 +78,11 @@ const Cards = ({ page, setPage, pageSize, maxPages, setMaxPages, query, createTo
   return (
     <>
 
-      <div className="adsbygoogle adsense ad_space"></div>
+      <section className="adsbygoogle adsense ad_space"></section>
 
       <div className="title">{iconsLen} Icons</div>
 
-      <div className='cards'>
+      <section className='cards'>
 
         <div className="wrapper">
 
@@ -109,7 +109,7 @@ const Cards = ({ page, setPage, pageSize, maxPages, setMaxPages, query, createTo
           }
 
         </div>
-      </div >
+      </section >
     </>
   )
 }
