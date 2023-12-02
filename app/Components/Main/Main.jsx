@@ -187,6 +187,30 @@ const Main = ({ page, setPage, pageSize, setPageSize, maxPages, setMaxPages, que
         < Loading />
       }
 
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <aside></aside>
+      <aside></aside>
+      <aside></aside>
+      <aside></aside>
+      <aside></aside>
+      <aside></aside>
+      <aside></aside>
+
     </main>
   )
 }
