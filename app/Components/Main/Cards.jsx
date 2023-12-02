@@ -79,6 +79,9 @@ const Cards = ({ page, setPage, pageSize, maxPages, setMaxPages, query, createTo
     <>
 
       <section className="adsbygoogle adsense ad_space"></section>
+      <section className="adsbygoogle adsense ad_space"></section>
+      <section className="adsbygoogle adsense ad_space"></section>
+      <section className="adsbygoogle adsense ad_space"></section>
 
       <div className="title">{iconsLen} Icons</div>
 
