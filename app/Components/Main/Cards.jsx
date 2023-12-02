@@ -81,6 +81,9 @@ const Cards = ({ page, setPage, pageSize, maxPages, setMaxPages, query, createTo
       <div className="title">{iconsLen} Icons</div>
 
       <div className='cards'>
+
+        <div className="ad_space"></div>
+
         <div className="wrapper">
 
           {renderIconsList &&
