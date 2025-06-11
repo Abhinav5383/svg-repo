@@ -1,0 +1,28 @@
+{
+    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+    "files": {
+        "ignore": ["./**/node_modules/*", "./**/dist/*", "./**/build/*", "./**/public/*", "./**/pm2.config.cjs"],
+        "include": ["./*"],
+        "maxSize": 31457280
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "correctness": {
+                "useExhaustiveDependencies": "off",
+                "noUnusedImports": "error"
+            },
+            "style": {
+                "noParameterAssign": "off"
+            }
+        }
+    },
+    "formatter": {
+        "lineWidth": 140,
+        "indentWidth": 4,
+        "indentStyle": "space"
+    },
+    "organizeImports": {
+        "enabled": true
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "name": "backend",
+    "type": "module",
+    "scripts": {
+        "dev": "bun run --hot src/index.ts"
+    },
+    "dependencies": {
+        "hono": "^4.7.9"
+    },
+    "devDependencies": {
+        "@types/bun": "^1.2.15"
+    }
+}

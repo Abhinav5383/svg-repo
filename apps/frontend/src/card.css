@@ -1,0 +1,60 @@
+.icon svg {
+    width: var(--svg-width, 45%);
+    height: var(--svg-height, 45%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: currentColor;
+    transition: color 250ms ease;
+}
+
+.type-color {
+    color: currentColor;
+}
+
+.type-fill {
+    fill: currentColor;
+}
+
+.type-stroke {
+    stroke: currentColor;
+}
+
+.type-fill-stroke {
+    fill: currentColor;
+    stroke: currentColor;
+    color: currentColor;
+}
+
+.type-color-fill {
+    color: currentColor;
+    fill: currentColor;
+}
+
+.type-color-fill-stroke {
+    color: currentColor;
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+.type-fill-stroke-force {
+    fill: currentColor;
+    stroke: currentColor !important;
+}
+
+.type-fill-stroke-force * {
+    stroke: currentColor !important;
+}
+
+.type-special-cls .cls-1 {
+    fill: #fff;
+    opacity: 0;
+}
+
+.type-special-cls .cls-2 {
+    fill: currentColor;
+}
+
+.icon:hover {
+    --svg-color: var(--hover-color);
+}
