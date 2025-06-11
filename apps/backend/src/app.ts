@@ -10,9 +10,4 @@ app.use(
 );
 app.route("/search", searchRouter);
 
-Bun.serve({
-    port: 5500,
-    fetch(req, server) {
-        return app.fetch(req, { ip: server.requestIP(req) });
-    },
-});
+export { app };
